@@ -124,7 +124,7 @@ function bindRecorder() {
 
     link.setAttribute('style', 'display: none');
     link.href = downloadUrl;
-    link.download = 'camera-kit-web-recording.webm';
+    link.download = 'camera-kit-web-recording.mp4';
     link.click();
     link.remove();
   });
