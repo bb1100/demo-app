@@ -44,13 +44,13 @@ function bindFlipCamera(session: CameraKitSession) {
   flipCamera.style.cursor = 'pointer';
 
   flipCamera.addEventListener('click', () => {
-    updateCamera(session);
+    updateCamera(session, flipCamera);
   });
 
-  updateCamera(session, flipCamera);
+  // updateCamera(session, flipCamera);
 }
 
-async function updateCamera(session: CameraKitSession, flipCamera) {
+async function updateCamera(session: CameraKitSession, flipCamera: HTMLButtonElement) {
   isBackFacing = !isBackFacing;
 
   flipCamera.innerText = isBackFacing
