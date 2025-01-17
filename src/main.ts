@@ -8,7 +8,7 @@ import {
 } from '@snap/camera-kit';
 
 const liveRenderTarget = document.getElementById('canvas') as HTMLCanvasElement;
-const flipCamera = document.getElementById('flip');
+const flipCamera = document.getElementById('flip') as HTMLButtonElement;
 const videoContainer = document.getElementById('video-container') as HTMLElement;
 const videoTarget = document.getElementById('video') as HTMLVideoElement;
 const startRecordingButton = document.getElementById('start') as HTMLButtonElement;
