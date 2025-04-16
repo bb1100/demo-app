@@ -14,6 +14,7 @@ const videoTarget = document.getElementById('video') as HTMLVideoElement;
 const startRecordingButton = document.getElementById('start') as HTMLButtonElement;
 const stopRecordingButton = document.getElementById('stop') as HTMLButtonElement;
 const downloadButton = document.getElementById('download') as HTMLButtonElement;
+const captureButton = document.getElementById('capture') as HTMLButtonElement;
 
 let mediaRecorder: MediaRecorder;
 let downloadUrl: string;
@@ -130,5 +131,23 @@ function bindRecorder() {
   });
 }
 
-
 init();
+
+
+captureButton.addEventListener('click', () => {
+  // Convert our canvas to a data URL
+  let canvasUrl = liveRenderTarget.toDataURL("image/png", 1);
+  // Create an anchor, and set the href value to our data URL
+  const createEl = document.createElement('a');
+  createEl.href = canvasUrl;
+
+  // This is the name of our downloaded file
+  createEl.download = "download-this-canvas";
+
+  // Click the download button, causing a download, and then remove it
+  createEl.click();
+  createEl.remove();
+});
+
+
+
